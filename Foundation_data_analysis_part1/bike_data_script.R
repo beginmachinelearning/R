@@ -45,9 +45,28 @@ table(bike[bike$cyc_freq=='Daily',]$gender)
 mean(bike[bike$cyc_freq=='Daily',]$age)
 
 daily_riders<-bike[bike$cyc_freq=='Daily',]
+table(daily_riders$gender)
 mean(daily_riders[daily_riders$gender=='F', ]$age)
 mean(daily_riders[daily_riders$gender=='M', ]$age)
 
 daily_riders_male<-daily_riders[daily_riders$gender=='M', ]
 daily_riders_male_30<-daily_riders_male[daily_riders_male$age>=30, ]
 nrow(daily_riders_male_30)
+
+
+
+#Find the number of students in the dataset
+table(bike$student)
+
+#Pull out student data into a new dataframe
+student <-bike[bike$student==1,]
+
+#Find how often the students ride, using the new dataframe 
+table(student$cyc_freq)
+
+
+#Create a vector for the distance variable
+distance <-student$distance
+
+#Find average distance ridden
+table(bike$cyc_freq)
